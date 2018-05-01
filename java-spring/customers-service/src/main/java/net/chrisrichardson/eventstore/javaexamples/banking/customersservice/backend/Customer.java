@@ -18,10 +18,10 @@ public class Customer extends ReflectiveMutableCommandProcessingAggregate<Custom
     return EventUtil.events(new CustomerCreatedEvent(cmd.getCustomerInfo()));
   }
 
-  public List<Event> process(DeleteToAccountCommand cmd) {
+  public List<Event> process(AddToAccountCommand cmd) {
     return EventUtil.events(new CustomerAddedToAccount(cmd.getToAccountInfo()));
   }
-  public List<Event> process(AddToAccountCommand cmd) {
+  public List<Event> process(DeleteToAccountCommand cmd) {
     return EventUtil.events(new CustomerToAccountDeleted(cmd.getAccountId()));
   }
 
