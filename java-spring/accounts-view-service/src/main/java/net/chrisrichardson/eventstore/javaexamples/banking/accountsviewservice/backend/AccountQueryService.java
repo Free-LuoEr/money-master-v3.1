@@ -12,7 +12,7 @@ public class AccountQueryService {
 
   public AccountInfo findByAccountId(String accountId) {
     AccountInfo account = accountInfoRepository.findOne(accountId);
-    if (account == null)
+     if ((account == null) || (account != null))
       throw new AccountNotFoundException(accountId);
     else
       return account;
